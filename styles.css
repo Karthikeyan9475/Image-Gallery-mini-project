@@ -1,0 +1,239 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding:0;
+}
+body{
+    background-color: aliceblue;
+    margin: 0;
+    background-repeat:inherit;
+    height: 100%;
+    width:100%;
+    overflow-x: hidden;
+}
+/*heading*/
+header h1{
+    text-align: center;
+    padding:30px 10px;
+    background-color: black;
+    color:aliceblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-style: oblique;
+    margin:0;
+}
+header{
+    margin-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+   
+}
+/*image*/
+figure{
+    display:grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    gap:20px 20px;
+    justify-items: center;
+    align-items: center;
+    padding:20px
+}
+figure .image,img{
+    width:100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: 0.3s all ease-in-out;
+    overflow: hidden;
+}
+img:hover{
+    cursor:pointer;
+    transform: scale(1.1);
+    filter: grayscale(0.5);
+}
+/*button*/
+.btn-1{
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    position: fixed;
+    top:50%;
+    left:24%;
+    z-index: 4;
+    opacity: 1;
+    display: none;
+    border: none; 
+    background: transparent;
+}
+i{
+    color:white;
+    font-size: 40px;
+}
+.btn-2{
+    width: 60px;
+    height: 60px;
+    color:white;
+    border-radius: 40px;
+    position: fixed;
+    top:50%;
+    left:72%;
+    z-index: 10;
+    display: none;
+    opacity: 1;
+    border: none;
+    background: transparent;
+}
+.btn-2,.btn-1,i:hover{
+    cursor: pointer;
+    color: orange;
+    opacity: 1;
+}
+/* Close button styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 60px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.5;
+}
+.close-btn:hover{
+    color:red;
+}
+.close-btn:active{
+    color: red;
+}
+
+/* .overlay{
+    background-color: black;
+    width:100%;
+    height:100%;
+    position: fixed;
+    opacity:0.8;
+    top:15%;
+    z-index:1;
+    display: none;
+    border-radius: 5px;
+} */
+
+/* Popup styling */
+.popup {
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    background-color: transparent; 
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 3;
+    text-align: center;
+    display: none;
+    -webkit-box-shadow: 3px 2px 60px 7px rgba(32,93,247,0.5);
+-moz-box-shadow: 3px 2px 60px 7px rgba(32,93,247,0.5);
+box-shadow: 3px 2px 60px 7px rgba(32,93,247,0.5);
+}
+
+.popup-content {
+    background-color:black;
+    opacity:0.8;
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display: none;
+}
+
+.popup-image {
+    width: 800px;
+    height: 600px;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+}
+/*Page counter */
+.page-counter {
+    
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding:10px;
+    z-index: 5;
+    position: fixed;
+    bottom:15px ;
+    left:5px;
+}
+body.popup-active img:hover {
+    transform: none;
+    filter: none;
+    cursor: default;
+}
+.page-cover{
+    width: 100%;
+    height:100%;
+}
+
+@media screen and (width<=700px){
+    figure{
+        display:grid;
+        grid-template-columns: repeat(2,2fr);
+        gap:20px 20px;
+        justify-items: center;
+        align-items: center;
+    }
+    header h1{
+        font-size: 1rem;
+    }
+    .btn-2{
+        left: 75%;
+        opacity: 0.8;
+    }
+    .btn-1{
+        left:10%;
+        opacity:0.8;
+
+    }
+    .popup-image {
+        width: 300px;
+        height:400px;
+    }
+    .popup {
+        position: fixed;
+        top: 48%;
+        left: 50%;
+    }
+}
+@media screen and (width<=1000px)and (width>700px) {
+    figure{
+        display:grid;
+        grid-template-columns: repeat(3,2fr);
+        gap:20px 20px;
+        justify-items: center;
+        align-items: center;
+    }
+    header h1{
+        font-size: 2rem;
+    }
+    .btn-2{
+        left: 86%;
+        opacity: 0.8;
+    }
+    .btn-1{
+        left:5%;
+        opacity: 0.8;
+    }
+    .popup-image {
+        width: 700px;
+        height: 600px;
+    }
+    .popup {
+        position: fixed;
+        top: 48%;
+        left: 50%;
+    }
+    
+}
